@@ -15,11 +15,31 @@ header {
     text-align: left;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
     margin: 0; 
     font-size: 2rem; 
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon img {
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: opacity 0.3s ease;
+}
+
+.user-icon img:hover {
+    opacity: 0.8; 
 }
 
 nav ul {
@@ -85,7 +105,7 @@ main {
 
 .card-poster {
     width: 100%;
-    height: 290px;
+    height: 340px;
     object-fit: cover;
     border-bottom: 2px solid #222;
 }
@@ -169,3 +189,6 @@ footer p {
         height: 150px;
     }
 }
+
+
+
