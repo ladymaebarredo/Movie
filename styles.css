@@ -1,194 +1,136 @@
-
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
     color: #333;
 }
 
-
 header {
-    background-color: lightblue;
+    background-color: lightseagreen;
     color: black;
-    padding: 1rem 2rem; 
-    text-align: left;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative; 
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 header h1 {
-    margin: 0; 
-    font-size: 2rem; 
-}
-
-.user-icon {
-    display: flex;
-    align-items: center;
-}
-
-.user-icon img {
-    width: 40px;
-    height: 40px; 
-    border-radius: 50%; 
-    cursor: pointer; 
-    transition: opacity 0.3s ease;
-}
-
-.user-icon img:hover {
-    opacity: 0.8; 
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
+    font-size: 2.5rem;
 }
 
-nav ul li {
-    margin: 0 1rem;
+header .user-icon {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem;
-    transition: color 0.3s ease, background-color 0.3s ease;
+header .user-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover;
 }
 
-nav ul li a:hover {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
+.carousel-indicators li {
+    background-color: #555;
 }
 
-
-main {
-    padding: 2rem;
-    text-align: center;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
 }
-
 .movie-cards {
-    padding: 1rem;
+    padding: 40px 20px;
+    background-color: #fff;
 }
 
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .movie-card {
-    background-color: lightblue;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    max-width: 300px;
-    height: 450px;
-    text-align: left;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    border: 2px solid black;
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-poster {
     width: 100%;
-    height: 340px;
+    height: 350px;
     object-fit: cover;
-    border-bottom: 2px solid #222;
 }
 
 .card-info {
-    padding: 1rem;
-    flex: 1;
+    padding: 20px;
 }
 
 .card-info h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.2em;
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .card-info p {
-    margin: 0;
-    font-size: 0.9em;
     color: #666;
+    margin: 10px 0 0;
 }
-
-.btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    background-color: #222;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-}
-
-
 footer {
-    background-color: transparent;
+    background-color: lightseagreen;
     color: black;
     text-align: center;
-    padding: 1rem 2rem; 
-    position: relative; 
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
 }
-
-footer p {
-    margin: 0;
-}
-
 
 @media (max-width: 768px) {
-    .cards-container {
-        gap: 0.5rem;
+    .carousel-inner img {
+        height: 300px;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 60px; 
     }
 
-    .movie-card {
-        max-width: 100%;
-        height: auto;
+    header .user-icon {
+        position: static; 
+        margin-top: 10px;
     }
 
-    nav ul li {
-        margin: 0 0.5rem;
-    }
-
-    nav ul li a {
-        padding: 0.3rem;
-    }
+    header h1 {
+        margin-bottom: 10px; 
 }
 
 @media (max-width: 480px) {
-    header {
-        font-size: 0.9em;
+    .card-info h3 {
+        font-size: 1.2rem;
     }
 
-    .movie-card {
-        height: auto;
-    }
-
-    .card-poster {
-        height: 150px;
+    .card-info p {
+        font-size: 0.9rem;
     }
 }
-
-
-
